@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  xssbot:
+    build: ./xssbot
+    image: splitline/xssbot
+    container_name: xssbot-ctf-note
+    environment: 
+      - PASSWORD=lHgpu4EqS4DOJz12Klz0JjQ9CY8nJ3um8yTKl-3YXVg
+  
+  ctf-note:
+    depends_on:
+      - xssbot
+    build: .
+    container_name: ctf-note
+    volumes:
+      - ./src/:/app
+    ports:
+      - 9527:80/tcp
+    environment: 
+      - FLAG=pctf{note_is_the_best}
+      - PASSWORD=lHgpu4EqS4DOJz12Klz0JjQ9CY8nJ3um8yTKl-3YXVg

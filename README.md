@@ -1,8 +1,3 @@
-# CTF Note
-
-- Category: Web
-- Solves: 0 / 95 (scores >= 1), 55 (scores > 1)
-
 ## Solution
 
 ### TL;DR
